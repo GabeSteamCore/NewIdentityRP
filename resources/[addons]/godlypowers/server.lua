@@ -161,6 +161,8 @@ AddEventHandler("playerConnecting", function(name, setKickReason, deferrals)
                 else -- temporarilly
                     deferrals.done("You are banned until " .. os.date('%Y-%m-%d', banExpireDate) .. ". reason : " .. reason) -- allow connection
                 end
+            else
+                deferrals.done()
             end
         end
     )
